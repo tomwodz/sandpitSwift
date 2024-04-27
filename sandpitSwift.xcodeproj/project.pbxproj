@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		125B2C312BDD8E1A0031C681 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		126812212BDC4944009D8EDB /* sandpitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sandpitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126812242BDC4944009D8EDB /* sandpitSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sandpitSwiftApp.swift; sourceTree = "<group>"; };
 		126812262BDC4944009D8EDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				126812242BDC4944009D8EDB /* sandpitSwiftApp.swift */,
+				125B2C312BDD8E1A0031C681 /* MyPlayground.playground */,
 				126812262BDC4944009D8EDB /* ContentView.swift */,
 				126812282BDC4945009D8EDB /* Assets.xcassets */,
 				1268122A2BDC4945009D8EDB /* Preview Content */,
