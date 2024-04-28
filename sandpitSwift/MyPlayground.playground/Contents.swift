@@ -107,3 +107,90 @@ if !thnik && ee < 30 {
 } else if ee < 120 {
     print("false")
 }
+
+var next: Int
+next = ee < 99 ? ee : 99
+print(next)
+
+switch ee {
+case 0,1,3,4:
+    print(ee)
+case 5...99:
+    print(ee)
+case 100:
+    print(ee)
+default:
+    print("default")
+}
+
+
+var temerature = 30
+
+switch temerature {
+case ...(-1):
+    print("Bardzo zimno")
+case 0...10:
+    print("Zimno")
+case 11...20:
+    print("Ciepło")
+case 21...36:
+    print("Bardzo ciepło")
+case 40...:
+    print("Koniec świata")
+default:
+    print("Inne")
+}
+
+var name1 = "Tomek"
+var day1 = "Czwartek"
+
+func hello(name:String,day:String){
+    print("Cześć " + name)
+    print("Dzisiaj mamy " + day)
+}
+
+hello(name: name1, day: day1)
+hello(name: "Justyna", day: "Środa")
+
+func helloToAt(to name: String,at day: String){
+    print("Cześć " + name)
+    print("Dzisiaj mamy " + day)
+}
+helloToAt(to: "Justyna", at: "Środa")
+
+func helloNone(_ name: String, _ day: String){
+    print("Cześć " + name)
+    print("Dzisiaj mamy " + day)
+}
+
+helloNone("Adam", "Niedziela")
+
+//Paramtery funkcji: zmienne, wartości, tablice, funkcje, obiekty, domknięcia
+
+func has10Size(text: String) -> Bool {
+    return text.count == 10
+}
+
+has10Size(text: "To jest jakiś tekst")
+has10Size(text:"ABCDEFGHIJ")
+
+func has10SizeInfo(text: String) -> (Bool, Int) {
+    return (text.count == 10, text.count)
+}
+
+has10SizeInfo(text: "To jest jakiś tekst")
+
+var nn: Bool
+var mm: Int
+(nn, mm) = has10SizeInfo(text: "ABCDEFGHIJ")
+
+func factorial(n: Int) -> Int {
+    if(n == 1) {
+        return n
+    } else {
+        return n * factorial(n: n-1)
+    }
+}
+
+factorial(n: 1)
+factorial(n: 5)
