@@ -194,3 +194,106 @@ func factorial(n: Int) -> Int {
 
 factorial(n: 1)
 factorial(n: 5)
+
+var tab = [1,2,3,4,5,10,11,30,66]
+
+print(tab[0])
+print(tab.count)
+
+tab.append(22)
+tab.count
+tab.remove(at: 9)
+tab.count
+
+var lotto = [0,0,0,0,0,0]
+
+lotto[0] = Int((arc4random() % 49)) + 1
+lotto[1] = Int((arc4random() % 49)) + 1
+lotto[2] = Int((arc4random() % 49)) + 1
+lotto[3] = Int((arc4random() % 49)) + 1
+lotto[4] = Int((arc4random() % 49)) + 1
+lotto[5] = Int((arc4random() % 49)) + 1
+
+print(lotto)
+
+var fruitsOne = ["Orange","Apple"]
+var fruitsSecond = ["Bananna"]
+
+fruitsSecond.append(contentsOf: fruitsOne)
+
+print(fruitsSecond)
+
+var map = ["PLN":"Zloty", "USD":"Dolar"]
+
+var cur = ["EURO":4.5,"USD":4.1]
+var pln = 100.0
+print("\(pln) PLN = \((100.0/cur["USD"]!)) USD")
+
+if let usd = cur["USD"] {
+    print("\(pln) PLN = \((100.0/cur["USD"]!)) USD")
+}
+
+var table = [10,11,12,13,14]
+
+var sum = 0
+for element in table {
+    sum = sum + element
+}
+print(sum)
+
+var ss = 0
+for i in 0..<table.count {
+    ss = ss + table[i]
+}
+print(ss)
+
+let credit = 100000.0
+let years = 5
+let perc = 0.06
+var le = credit
+var ol = 0.0
+
+for m in 1 ... years * 12 {
+    let capital  = credit / Double(years * 12)
+    let interest = (le * perc)/12.0
+    let capitalAndInterest = capital + interest
+    print("\(m) \(capitalAndInterest) \(capital) \(interest)")
+    le -= capital
+    ol += capitalAndInterest
+}
+print(ol)
+
+le = credit
+var mon = 0
+var wan = 1000.0
+ol = 0.0
+
+while (le > 0) {
+    mon += 1
+    let interest = (le * perc)/12.0
+    let capital = wan - interest
+    le -= capital
+    print("\(mon) \(capital) \(interest)")
+    ol += interest + capital
+}
+print("\(ol)")
+
+var tableToSort = [22,44,66,77,55,88,99,11,111,222]
+
+for _ in 1 ... tableToSort.count {
+    for i in 0 ..< (tableToSort.count - 1) {
+        let i1 = i
+        let i2 = i + 1
+        if tableToSort[i1]>tableToSort[i2] {
+            (tableToSort[i1], tableToSort[i2]) = (tableToSort[i2], tableToSort[i1])
+        }
+    }
+}
+print(tableToSort)
+
+tableToSort = [22,44,66,77,55,88,99,11,111,222]
+
+print(tableToSort)
+
+tableToSort.sort()
+print(tableToSort)
