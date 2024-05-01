@@ -523,4 +523,24 @@ mercedes.sound()
 let carNew: Car = mercedes
 carNew.sound()
 
+class Apple {
+    var color: String
+    
+    init(color: String){
+        self.color = color
+        print("Tworzę Aplle \(color)")
+    }
+    
+    deinit {
+        print("Usuwam Apple \(color)")
+    }
+}
+
+var apple:Apple? = Apple(color: "red")
+//var apple2 = apple
+//weak!!! nie liczy referencji
+weak var apple2 = apple
+apple = nil
+
+
 
