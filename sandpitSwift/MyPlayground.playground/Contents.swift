@@ -412,5 +412,115 @@ struct Film {
 var film = Film(name: "Speed", director: "Tom", year: 1999)
 film.writeFilm()
 
+struct Music {
+    var name: String
+    var year: Int
+    
+    init(fromName name:String,fromYear year:Int){
+        self.name = name
+        self.year = year
+    }
+    
+    init(_ name:String,_ year:Int){
+        self.name = name
+        self.year = year
+    }
+    func writeMusic(){
+        print("\(name) \(year)")
+    }
+}
+
+var music = Music("Tom", 2024)
+music.writeMusic()
+
+var music2 = Music(fromName: "Tom Tom Tom", fromYear: 2023)
+music2.writeMusic()
+
+class Employee {
+    var name: String
+    var surname: String
+    init(_name:String,_surname:String){
+        self.name = _name
+        self.surname = _surname
+    }
+}
+
+class Fiat {
+    var maxSpeed: Int
+    var price: Double
+    
+    init(maxSpeed:Int,price:Double){
+        self.maxSpeed = maxSpeed
+        self.price = price
+    }
+}
+
+class Audi {
+    var maxSpeed: Int
+    var price: Double
+    
+    init(_ maxSpeed:Int,_ price:Double){
+        self.maxSpeed = maxSpeed
+        self.price = price
+    }
+}
+
+var fiat = Fiat(maxSpeed: 200,price: 10000.00)
+var audi = Audi(260, 20000.00)
+
+
+class Car {
+    var maxSpeed: Int
+    var price: Double
+    var name: String
+    
+    init(_ maxSpeed:Int,_ price:Double,_ name:String){
+        self.maxSpeed = maxSpeed
+        self.price = price
+        self.name = name
+    }
+    
+    func drive()->String{
+        return "Jadę \(name) "
+    }
+    
+    func sound(){
+        print("Wrrrrr")
+    }
+}
+
+class Mercedes:Car {
+    override func sound(){
+        print("Wrrrummmm")
+    }
+}
+
+class Opel:Car{
+    var noOfWheels: Int
+    init(_ maxSpeed:Int,_ price:Double,_ name:String,_ noOfWheels:Int){
+        self.noOfWheels = noOfWheels
+        super.init(maxSpeed, price, name)
+    }
+}
+//na odwót!! super
+
+let mercedes = Mercedes(300,25000.00,"Mercedes")
+print(mercedes.drive())
+
+let opel = Opel(180,18000.00,"Opel",4)
+print(opel.drive())
+
+func station(car:Car){
+    print("Tankuję \(car.name)")
+}
+
+station(car:opel)
+station(car: mercedes)
+
+opel.sound()
+mercedes.sound()
+
+let carNew: Car = mercedes
+carNew.sound()
 
 
