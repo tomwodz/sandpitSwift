@@ -297,3 +297,120 @@ print(tableToSort)
 
 tableToSort.sort()
 print(tableToSort)
+
+func random(max: Int, count: Int) -> [Int]{
+    var table = [Int]()
+    
+    func draw() -> Int {
+        return Int(arc4random()) % max + 1
+    }
+    
+    while table.count < count {
+        var numberGame: Int = 0
+        repeat {
+            numberGame = draw()
+        } while table.contains(numberGame)
+        table.append(numberGame)
+    }
+    
+    return table
+}
+
+random(max: 70, count: 5)
+
+func game(max: Int) -> ((Int)->[Int]){
+    
+    func randomGame(count: Int) -> [Int]{
+        var table = [Int]()
+        
+        func draw() -> Int {
+            return Int(arc4random()) % max + 1
+        }
+        
+        while table.count < count {
+            var numberGame: Int = 0
+            repeat {
+                numberGame = draw()
+            } while table.contains(numberGame)
+            table.append(numberGame)
+        }
+        
+        return table
+    }
+    return randomGame
+}
+
+let newGame = game(max: 60)
+newGame(7)
+
+let newGame2 = game(max: 99)
+newGame2(6)
+
+func play(howMuch: Int, toDraw: Int, game: ((Int)->[Int])) -> [[Int]]{
+    var coupon = [[Int]]()
+    for _ in 1 ... howMuch {
+        coupon.append(game(toDraw))
+    }
+    return coupon
+}
+
+play(howMuch: 7, toDraw: 8, game: newGame)
+
+play(howMuch: 7, toDraw: 8, game: { num in
+var tab = [Int]()
+    for _ in 1 ... num {
+        tab.append(7)
+    }
+    return tab
+})
+
+play(howMuch: 7, toDraw: 8) { num in
+var tab = [Int]()
+    for _ in 1 ... num {
+        tab.append(7)
+    }
+    return tab
+}
+
+struct Point{
+    var x: Int, y:Int
+}
+
+Point(x: 9, y: 12)
+
+struct Movie {
+        var name: String
+        var director: String
+        var year: Int
+}
+
+var movie = Movie(name: "Speed", director: "Tom", year: 1999)
+
+var movies = [Movie]()
+
+movies.append(movie)
+movies.append(Movie(name: "Speed 2", director: "Tom", year: 2002))
+
+func writeMovie(movie:Movie){
+    print("\(movie.director) \(movie.name) \(movie.year)")
+}
+
+for m in movies {
+    writeMovie(movie: m)
+}
+
+struct Film {
+    var name: String
+    var director: String
+    var year: Int
+    
+    func writeFilm(){
+        print("\(director) \(name) \(year)")
+    }
+}
+
+var film = Film(name: "Speed", director: "Tom", year: 1999)
+film.writeFilm()
+
+
+
